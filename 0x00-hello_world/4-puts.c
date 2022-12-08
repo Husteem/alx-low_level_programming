@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  *  * Description: main - Puts the texts to stdout.
- *   * Return: 0 if the code is a succes.
+ *   * Return: 0 should code runs successfully.
  *    */
 int main(void)
 {
