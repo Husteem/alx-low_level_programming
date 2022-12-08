@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 /**
  * Description: main - Prints the specified words.
