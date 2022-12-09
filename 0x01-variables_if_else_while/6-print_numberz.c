@@ -1,16 +1,13 @@
 #include <stdio.h>
-
 /**
- * Description: main - A program that prints all single digit
- * You are not allowed to use any variable of type char
- * Return: 0
+ * main-program entry point.
+ * Return:0 no error, non zero if error
  */
-
 int main(void)
 {
-int num;
-for (num = "0"; num <= "9"; num++)
-putchar(num);
+int i;
+for (i = '0'; i <= '9'; i++)
+putchar(i);
 putchar('\n');
 return (0);
 }
