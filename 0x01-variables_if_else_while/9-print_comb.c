@@ -8,18 +8,18 @@
 
 int main(void)
 {
-	int num1 = 48;
-	int num2 = 44;
-	while (num1 <= 57)
-	{
-		putchar(num1);
-		if (num1 != 57)
-		{
-			putchar(num2);
-			putchar(32);
-		}
-		num1 += 1;
-	}
-	putchar('\n');
-	return (0);
+int num1 = 48;
+int num2 = 44;
+while (num1 <= 57)
+{
+putchar(num1);
+if (num1 != 57)
+{
+putchar(num2);
+putchar(32);
+}
+num1 += 1;
+}
+putchar('\n');
+return (0);
 }

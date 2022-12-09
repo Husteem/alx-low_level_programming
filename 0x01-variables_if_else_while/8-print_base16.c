@@ -8,18 +8,19 @@
 
 int main(void)
 {
-	int num = 48;
-	int lt = 'a';
-	while (num <= 57)
-	{
-		putchar(num);
-		num += 1;
-	}
-	while (lt <= 'f')
-	{
-		putchar(lt);
-		lt++;
-	}
-	putchar('\n');
-	return (0);
+int num = 48;
+int lt = 'a';
+while (num <= 57)
+}
+{
+putchar(num);
+num += 1;
+}
+while (lt <= 'f')
+{
+putchar(lt);
+lt++;
+}
+putchar('\n');
+return (0);
 }
