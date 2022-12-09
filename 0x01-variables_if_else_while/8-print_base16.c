@@ -1,10 +1,10 @@
-nclude <stdio.h>
+#include <stdio.h>
 
 /**
- *  * Description: main -  A program that prints all the numbers of base 16.
- *   * You can only use the putchar function.
- *    * Return: 0
- *     */
+ * Description: main -  A program that prints all the numbers of base 16.
+ * You can only use the putchar function.
+ * Return: 0
+ */
 
 int main(void)
 {
