@@ -1,33 +1,38 @@
-include <stdio.h>
+#include <stdio.h>
 
 /**
- *  main-entry point
- * Description: prints all possible combinations of two two-digit numbers
- * Return:0 success, non zero fail
- */
+ *  * Description: main - A program that prints all possible different comb
+ *   * Return: 0
+ *    */
 
 int main(void)
 {
-		int i, j;
+		int num1 = 48;
+			int num2, num3;
+				int comb = 44;
 
-			for (i = 0; i < 99; i++)
-					{
-								for (j = i + 1; j <= 99; j++)
-											{
-															putchar('0' + i / 10);
-																		putchar('0' + i % 10);
-
-																					putchar(' ');
-
-																								putchar('0' + j / 10);
-																											putchar('0' + j % 10);
-
-																														if (i == 98 && j == 99)
-																																			break;
-																																	putchar(',');
-																																				putchar(' ');
-																																						}
-									}
-				putchar('\n');
-					return (0);
+					while (num1 <= 57)
+							{
+										num2 = num1 + 1;
+												while (num2 <= 57)
+															{
+																			num3 = num2 + 1;
+																						while (num3 <= 57)
+																										{
+																															putchar(num1);
+																																			putchar(num2);
+																																							putchar(num3);
+																																											if (num1 != 55 || num2 != 56 || num3 != 57)
+																																																{
+																																																						putchar(comb);
+																																																											putchar(32);
+																																																															}
+																																															num3 += 1;
+																																																		}
+																									num2 += 1;
+																											}
+														num1 += 1;
+															}
+						putchar('\n');
+							return (0);
 }
