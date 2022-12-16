@@ -6,6 +6,7 @@
  * Return: a diagonal
  */
 void print_diagonal(int n)
+
 {
 int dr, ln;
 if (n <= 0)
@@ -14,7 +15,7 @@ _putchar('\n');
 }
 else
 {
-or (dr = 1; dr <= n; dr++)
+for (dr = 1; dr <= n; dr++)
 {
 for (ln = 1; ln < dr; ln++)
 {
