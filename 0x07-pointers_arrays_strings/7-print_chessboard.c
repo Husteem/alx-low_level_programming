@@ -1,23 +1,31 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * print_diagsums - a function that prints sum of the two diagonals
- * of a square matrix of integers.
- * @a: array
- * @size: size of array
+ * _strstr - a function that locates a substring.
+ * @s1: search area
+ * @s2: string to be searcht
  * Return: Always 0.
  */
-void print_diagsums(int *a, int size)
+char *_strstr(char *s1, char *s2)
 {
-unsigned int s1 = 0, s2 = 0;
-int x;
+unsigned int x, size = 0;
+while (*(s2 + size) != 0)
+{
+size++;
+}
+while (*s1 != 0)
+{
+unsigned int y = 0;
 for (x = 0; x < size; x++)
 {
-int x1 = x + size * x;
-int x2 = size * (x + 1) - (x + 1);
-s1 += a[x1];
-s2 += a[x2];
+if (*(s1 + x) == *(s2 + x))
+y++;
 }
-printf("%d, %d\n", s1, s2);
+if (y == size)
+{
+return (s1);
+}
+s1++;
+}
+return (0);
 }
