@@ -35,7 +35,8 @@ return (0);
 else if (*s == '\0')
 {
 return (1);
-}return (get_pal(s + 1, len - 2));
+}
+return (get_pal(s + 1, len - 2));
 }
 
 /**
@@ -47,7 +48,8 @@ return (1);
 
 int is_palindrome(char *s)
 {
-int len;len = _strlen_recursion(s);
+int len;
+len = _strlen_recursion(s);
 if (len <= 1)
 {
 return (1);

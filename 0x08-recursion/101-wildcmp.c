@@ -6,7 +6,7 @@ nclude "main.h"
  * @s1: char compared.
  * @s2: char compared to.
  * Return: Always 0.
- */
+*/
 int wildcmp(char *s1, char *s2)
 {
 if (*s1 == '\0' && *s2 == '\0')
