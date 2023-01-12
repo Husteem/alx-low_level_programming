@@ -11,23 +11,24 @@
 
 char *_strdup(char *str)
 {
-char *nums;
-unsigned int x, len;
-if (str == NULL)
-return (NULL);
-x = len = 0;
-while (str[len] != '\0')
-{
-len++;
-}
-len++;
-nums = malloc(len * sizeof(*str));
-if (nums == NULL)
-return (NULL);
-while (x <= len)
-{
-nums[x] = str[x];
-x++;
-}
-return (nums);
+	char *nums;
+	unsigned int x, len;
+
+	if (str == NULL)
+		return (NULL);
+	x = len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	len++;
+	nums = malloc(len * sizeof(*str));
+	if (nums == NULL)
+		return (NULL);
+	while (x <= len)
+	{
+		nums[x] = str[x];
+		x++;
+	}
+	return (nums);
 }
