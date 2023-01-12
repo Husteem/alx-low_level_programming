@@ -1,71 +1,102 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
- * wrdcnt - counts the number of words in a string
- * @s: string to count
- * Return: int of number of words
+ * strtow - splits string into words
+ * @str: string
+ * Return: pointer to array of strings
  */
-int wrdcnt(char *s)
-{
-int i, n = 0;
-for (i = 0; s[i]; i++)
-{
-if (s[i] == ' ')
-{
-if (s[i + 1] != ' ' && s[i + 1] != '\0')
-n++;
-}
-else if (i == 0)
-n++;
-}
-n++;
-return (n);
-}
-
-/**
-* strtow - splits a string into words
-* @str: string to split
-* Return: pointer to an array of strings
-*/
 char **strtow(char *str)
 {
-int i, j, k, l, n = 0, wc = 0;
-char **w;
-if (str == NULL || *str == '\0')
-return (NULL);
-n = wrdcnt(str);
-if (n == 1)
-return (NULL);
-w = (char **)malloc(n * sizeof(char *));
-if (w == NULL)
-return (NULL);
-w[n - 1] = NULL;
-i = 0;
-while (str[i])
-{
-if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-{
-for (j = 1; str[i + j] != ' ' && str[i + j]; j++);
-++;
-w[wc] = (char *)malloc(j * sizeof(char));
-j--;
-if (w[wc] == NULL)
-{
-for (k = 0; k < wc; k++)
-free(w[k]);
-free(w[n - 1]);
-free(w);
-return (NULL);
+	char **s;
+
+	int words, i = 0, filler = 0;
+
+	if (str == NULL || *str == 0)
+		return (NULL);
+	words = getWords(str);
+	if (words == 0)
+		return (NULL);
+	s = malloc(sizeof(char *) * (words + 1));
+	if (s == NULL)
+		return (NULL);
+	while (str[i])
+	{
+		if (str[i] != ' ')
+		{
+			int size = get_size_of_first(str + i);
+
+			s[filler] = malloc(sizeof(char) * (size + 1));
+			if (s[filler] == NULL)
+			{
+				int k;
+
+				for (k = 0; k < filler; k++)
+				{
+					free(s[k]);
+				}
+				free(s);
+				return (NULL);
+			}
+			fill(s[filler], str + i, size);
+			filler++;
+			i += size - 1;
+		}
+		i++;
+	}
+	s[words] = NULL;
+	return (s);
 }
-for (l = 0; l < j; l++)
-w[wc][l] = str[i + l];
-w[wc][l] = '\0';
-wc++;
-i += j;
+/**
+ * getWords - get number of words in string
+ * @s: string
+ * Return: words
+ */
+int getWords(char *s)
+{
+	int i = 0, words = 0;
+
+	while (s[i])
+	{
+		if (i == 0 && s[i] != ' ')
+			words++;
+
+		if (s[i] == ' ' && s[i + 1] && s[i + 1] != ' ')
+		{
+			words++;
+		}
+		i++;
+	}
+	return (words);
 }
-else
-i++;
+/**
+ * get_size_of_first - size of first word in string
+ * @s: string
+ * Return: size of word
+ */
+int get_size_of_first(char *s)
+{
+	int i = 0;
+
+	while (s[i] && s[i] != ' ')
+		i++;
+	return (i);
 }
-return (w);
+/**
+ * fill - fills s2 in s1
+ * @s1: string1
+ * @s2: string2
+ * @size: size of s2
+ * Return: void
+ */
+void fill(char *s1, char *s2, int size)
+{
+	int i = 0;
+
+	while (i < size)
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[size] = '\0';
 }
