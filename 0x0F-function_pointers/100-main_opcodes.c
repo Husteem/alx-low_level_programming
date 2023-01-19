@@ -7,7 +7,7 @@
  *    * @a: main function address.
  *     * @n: print number of bytes.
  *      * Return: EXIT_SUCCESS.
-*/
+ */
 
 void print_opcodes(char *a, int n)
 {
@@ -20,7 +20,6 @@ printf(" ");
 }
 printf("\n");
 }
-
 /**
  *  * main - a function that prints the opcodes
  *   * of its own main function.
@@ -31,8 +30,8 @@ printf("\n");
 
 int main(int argc, char **argv)
 {
-nt n;
-f (argc != 2)
+int n;
+if (argc != 2)
 {
 printf("Error\n");
 exit(1);
